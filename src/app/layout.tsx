@@ -1,18 +1,9 @@
+
 import type { Metadata } from 'next';
-// import { GeistSans } from 'geist/font/sans'; // Original import
-// import { GeistMono } from 'geist/font/mono';   // Original import
-import * as GeistSansModule from 'geist/font/sans';
-import * as GeistMonoModule from 'geist/font/mono';
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"; // For potential toast notifications
-
-const geistSans = GeistSansModule.GeistSans({
-  variable: '--font-geist-sans',
-});
-
-const geistMono = GeistMonoModule.GeistMono({
-  variable: '--font-geist-mono',
-});
 
 export const metadata: Metadata = {
   title: 'ECS Open Day - University of Kelaniya',
@@ -30,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
+      <body className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased`}>
         {children}
         <Toaster />
       </body>
