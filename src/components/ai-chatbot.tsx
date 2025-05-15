@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useRef, useEffect, type FormEvent } from 'react';
@@ -61,11 +62,11 @@ export function AiChatbot() {
       </Button>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="sm:max-w-[425px] md:max-w-[600px] bg-aurum-dark-blue text-aurum-light-gray border-aurum-mid-blue flex flex-col h-[80vh] max-h-[700px] p-0">
-          <DialogHeader className="p-6 pb-2 border-b border-aurum-mid-blue">
-            <DialogTitle className="text-aurum-accent text-xl">ECS Virtual Assistant</DialogTitle>
+        <DialogContent className="sm:max-w-[425px] md:max-w-[600px] bg-popover text-popover-foreground border-border flex flex-col h-[80vh] max-h-[700px] p-0">
+          <DialogHeader className="p-6 pb-2 border-b border-border">
+            <DialogTitle className="text-primary text-xl">ECS Virtual Assistant</DialogTitle>
             <DialogClose asChild>
-                <Button variant="ghost" size="icon" className="absolute right-4 top-4 text-aurum-light-gray hover:bg-aurum-mid-blue">
+                <Button variant="ghost" size="icon" className="absolute right-4 top-4 text-foreground hover:bg-muted">
                     <X className="h-5 w-5" />
                     <span className="sr-only">Close</span>
                 </Button>
@@ -76,21 +77,21 @@ export function AiChatbot() {
             <div className="space-y-4">
               {messages.map(msg => (
                 <div key={msg.id} className={`flex items-end gap-2 ${msg.sender === 'user' ? 'justify-end' : ''}`}>
-                  {msg.sender === 'bot' && <Bot className="w-6 h-6 text-aurum-accent flex-shrink-0" />}
+                  {msg.sender === 'bot' && <Bot className="w-6 h-6 text-primary flex-shrink-0" />}
                   <div className={`max-w-[75%] p-3 rounded-lg shadow ${
                     msg.sender === 'user' 
-                      ? 'bg-aurum-accent text-aurum-near-black' 
-                      : 'bg-aurum-mid-blue text-aurum-light-gray'
+                      ? 'bg-primary text-primary-foreground' 
+                      : 'bg-muted text-foreground'
                   }`}>
                     <p className="text-sm whitespace-pre-wrap">{msg.text}</p>
                   </div>
-                  {msg.sender === 'user' && <User className="w-6 h-6 text-aurum-light-gray flex-shrink-0" />}
+                  {msg.sender === 'user' && <User className="w-6 h-6 text-foreground flex-shrink-0" />}
                 </div>
               ))}
               {isLoading && (
                 <div className="flex items-end gap-2">
-                  <Bot className="w-6 h-6 text-aurum-accent flex-shrink-0" />
-                  <div className="max-w-[75%] p-3 rounded-lg shadow bg-aurum-mid-blue text-aurum-light-gray">
+                  <Bot className="w-6 h-6 text-primary flex-shrink-0" />
+                  <div className="max-w-[75%] p-3 rounded-lg shadow bg-muted text-foreground">
                     <p className="text-sm italic">Typing...</p>
                   </div>
                 </div>
@@ -98,17 +99,17 @@ export function AiChatbot() {
             </div>
           </ScrollArea>
 
-          <DialogFooter className="p-4 border-t border-aurum-mid-blue">
+          <DialogFooter className="p-4 border-t border-border">
             <form onSubmit={handleSubmit} className="flex w-full gap-2">
               <Input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about ECS Open Day..."
-                className="flex-grow bg-aurum-near-black border-aurum-mid-blue text-aurum-light-gray placeholder:text-aurum-light-gray/50 focus:ring-aurum-accent"
+                className="flex-grow bg-background border-border text-foreground placeholder:text-muted-foreground focus:ring-ring"
                 disabled={isLoading}
               />
-              <Button type="submit" className="bg-aurum-accent hover:bg-aurum-accent/90 text-aurum-near-black" disabled={isLoading}>
+              <Button type="submit" className="bg-primary hover:bg-primary/90 text-primary-foreground" disabled={isLoading}>
                 <Send size={18} />
               </Button>
             </form>
