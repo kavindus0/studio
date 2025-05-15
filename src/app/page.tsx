@@ -7,8 +7,6 @@ import Image from 'next/image';
 import Preloader from '@/components/preloader';
 import { WebsiteIcon, LinkedInIcon, FacebookIcon } from '@/components/icons';
 import { AiChatbot } from '@/components/ai-chatbot';
-// ImageGallery import removed as it's no longer used
-// import { Button } from '@/components/ui/button'; // For potential future use, current buttons are custom CSS
 
 export default function OpenDayPage() {
   const [showContent, setShowContent] = useState(false);
@@ -84,8 +82,7 @@ export default function OpenDayPage() {
                 Open Day 2024 - University of Kelaniya
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10">
-                Explore innovation, discover opportunities, and shape your future with us. 
-                Welcome to the forefront of technology at UoK!
+              Let's Embrace the world of Hardware and Software, to create a sustainable future
               </p>
               <a href="#register" className="aurum-button text-lg">
                 Register for Updates
@@ -94,78 +91,6 @@ export default function OpenDayPage() {
           </header>
 
           <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-16 md:space-y-24">
-            {/* Welcome Section */}
-            <section id="welcome" className="section-animate opacity-0">
-              <div className="section-card">
-                <h2 className="section-title">Welcome to ECS Open Day!</h2>
-                <p className="text-lg text-foreground mb-4 leading-relaxed">
-                  We are thrilled to welcome you to the Electronics and Computer Science (ECS) section's Open Day at the University of Kelaniya. This is your chance to dive deep into the exciting world of ECS, understand our cutting-edge curriculum, meet our passionate faculty, and envision your future in this dynamic field.
-                </p>
-                <p className="text-lg text-foreground leading-relaxed">
-                  Whether you're a prospective student, a curious parent, or an industry enthusiast, we have something for everyone. Prepare to be inspired!
-                </p>
-              </div>
-            </section>
-
-            {/* About ECS Section - REMOVED */}
-
-            {/* Student Life/Achievements Section */}
-            <section id="student-life" className="section-animate opacity-0">
-              <div className="section-card">
-                <h2 className="section-title">Student Life & Achievements</h2>
-                <p className="text-lg text-foreground mb-6 leading-relaxed">
-                  Life at ECS is vibrant and engaging. Our students participate in numerous co-curricular and extra-curricular activities, from hackathons and coding competitions to tech talks and industry collaborations.
-                </p>
-                <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-muted p-4 rounded-lg">
-                        <h3 className="text-xl font-semibold text-primary mb-2">InnovateFest 2023 Winners</h3>
-                        <p className="text-sm text-foreground">Our team secured first place for their groundbreaking project on AI-powered agricultural solutions.</p>
-                    </div>
-                    <div className="bg-muted p-4 rounded-lg">
-                        <h3 className="text-xl font-semibold text-primary mb-2">Robotics Club Excellence</h3>
-                        <p className="text-sm text-foreground">The ECS Robotics Club consistently performs at national level competitions, showcasing advanced robotic designs.</p>
-                    </div>
-                    <div className="bg-muted p-4 rounded-lg">
-                        <h3 className="text-xl font-semibold text-primary mb-2">IEEE Student Branch Activities</h3>
-                        <p className="text-sm text-foreground">Active participation in workshops, seminars, and outreach programs organized by the IEEE student chapter.</p>
-                    </div>
-                    <div className="bg-muted p-4 rounded-lg">
-                        <h3 className="text-xl font-semibold text-primary mb-2">Industry Internships</h3>
-                        <p className="text-sm text-foreground">High placement rates for internships at leading tech companies, providing valuable real-world experience.</p>
-                    </div>
-                </div>
-              </div>
-            </section>
-
-            {/* Facilities Section */}
-            <section id="facilities" className="section-animate opacity-0">
-              <div className="section-card">
-                <h2 className="section-title">State-of-the-Art Facilities</h2>
-                <p className="text-lg text-foreground mb-6 leading-relaxed">
-                  The ECS section is equipped with modern laboratories and resources to provide students with an exceptional learning environment. These facilities support both coursework and research activities.
-                </p>
-                <ul className="list-disc list-inside text-lg text-foreground space-y-2 pl-4">
-                  <li>Advanced Digital Electronics Lab</li>
-                  <li>Microprocessor and Embedded Systems Lab</li>
-                  <li>Communication Systems Lab</li>
-                  <li>High-Performance Computing Cluster (Access)</li>
-                  <li>Dedicated Project Labs for Final Year Students</li>
-                  <li>Modern Software Development Environments</li>
-                </ul>
-                 <div className="mt-8 text-center">
-                    <a 
-                        href="https://southbend.iu.edu/students/academic-success-programs/academic-centers-for-excellence/docs/Basic%20Math%20Review%20Card.pdf" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="aurum-button-secondary"
-                    >
-                        Learn More (PDF Guide)
-                    </a>
-                </div>
-              </div>
-            </section>
-
-            {/* Image Gallery Section - REMOVED */}
             
             {/* Registration Form Section */}
             <section id="register" className="section-animate opacity-0">
