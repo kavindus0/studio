@@ -68,12 +68,12 @@ export default function OpenDayPage() {
           <header className="py-12 md:py-20 bg-card shadow-xl section-animate opacity-0">
             <div className="container mx-auto px-6 text-center">
               <Image 
-                src="https://placehold.co/150x150.png" // Placeholder, replace with actual logo
-                alt="University of Kelaniya Logo" 
+                src="https://ecsc-uok.com/assets/ecsc_logo_header-b0c5d86f.png"
+                alt="ECSC UOK Logo" 
                 width={96} 
                 height={96} 
                 className="mx-auto mb-6"
-                data-ai-hint="university logo"
+                data-ai-hint="logo"
               />
               <h1 className="text-4xl md:text-6xl font-bold text-primary mb-4">
                 Electronics & Computer Science
@@ -95,7 +95,7 @@ export default function OpenDayPage() {
             {/* Registration Form Section */}
             <section id="register" className="section-animate opacity-0">
               <div className="section-card">
-                <h2 className="section-title">Register Your Interest</h2>
+                <h2 className="section-title">More About ECS</h2>
                 <p className="text-lg text-foreground mb-6 text-center leading-relaxed">
                   Stay updated with the latest news about the ECS Open Day and future events. Please fill out the form below.
                 </p>
