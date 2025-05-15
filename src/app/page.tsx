@@ -85,7 +85,7 @@ export default function OpenDayPage() {
               Let's Embrace the world of Hardware and Software, to create a sustainable future
               </p>
               <a href="#register" className="aurum-button text-lg">
-                Register for Updates
+                More About ECS
               </a>
             </div>
           </header>
@@ -101,7 +101,7 @@ export default function OpenDayPage() {
                 </p>
                 <div className="responsive-iframe-container bg-muted rounded-lg shadow-inner">
                   <iframe
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSfn4i3gP7X6pB0d8rV_E5QjC_kXn9lY_hWfA_j7sO6zY1pQJw/viewform?embedded=true"
+                    src="https://forms.gle/3XWB4TLjUncWFxRC8"
                     title="ECS Open Day Registration Form"
                     frameBorder="0"
                     marginHeight={0}
