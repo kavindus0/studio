@@ -1,17 +1,17 @@
 import type { Metadata } from 'next';
-import { GeistSans } from 'next/font/google';
-import { GeistMono } from 'next/font/google';
+// import { GeistSans } from 'geist/font/sans'; // Original import
+// import { GeistMono } from 'geist/font/mono';   // Original import
+import * as GeistSansModule from 'geist/font/sans';
+import * as GeistMonoModule from 'geist/font/mono';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"; // For potential toast notifications
 
-const geistSans = GeistSans({
+const geistSans = GeistSansModule.GeistSans({
   variable: '--font-geist-sans',
-  subsets: ['latin'],
 });
 
-const geistMono = GeistMono({
+const geistMono = GeistMonoModule.GeistMono({
   variable: '--font-geist-mono',
-  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
