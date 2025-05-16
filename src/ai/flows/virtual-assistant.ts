@@ -38,16 +38,15 @@ const prompt = ai.definePrompt({
   Context: The ECS Open Day includes information on the schedule, speakers, registration process, and department information. The event is designed to provide insights into the world of ECS, showcase the curriculum, and allow visitors to meet faculty.
 
   Question: {{{query}}}
-  `,config: {
+  `,
+  config: {
+    // Explicitly set safety settings for all supported categories to be more permissive for debugging
     safetySettings: [
-      {
-        category: 'HARM_CATEGORY_DANGEROUS_CONTENT',
-        threshold: 'BLOCK_ONLY_HIGH',
-      },
-      {
-        category: 'HARM_CATEGORY_HATE_SPEECH',
-        threshold: 'BLOCK_ONLY_HIGH',
-      },
+      { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_ONLY_HIGH' },
+      { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_ONLY_HIGH' },
+      { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_ONLY_HIGH' },
+      { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_ONLY_HIGH' },
+      // Note: HARM_CATEGORY_CIVIC_INTEGRITY is not supported by gemini-2.0-flash and should not be included.
     ],
   },
 });
@@ -70,8 +69,24 @@ const virtualAssistantFlow = ai.defineFlow(
         return { response: "I'm sorry, I couldn't generate a response for that. Please try a different question." };
       }
       return promptOutput;
-    } catch (error) {
-      console.error('Error during virtualAssistantFlow execution:', error);
+    } catch (error: any) {
+      console.error('Error during virtualAssistantFlow execution. Type:', typeof error);
+      if (error instanceof Error) {
+        console.error('Error message:', error.message);
+        console.error('Error name:', error.name);
+        console.error('Error stack:', error.stack);
+      } else {
+        // Attempt to stringify if it's not a standard Error object
+        try {
+          console.error('Error object (not an Error instance):', JSON.stringify(error, null, 2));
+        } catch (stringifyError) {
+          console.error('Error object (not an Error instance, and could not be stringified):', error);
+        }
+      }
+      
+      // You might want to check for specific error structures from Google AI / Genkit here
+      // For example, if (error.details) console.error('Error details:', error.details);
+
       return { response: "An unexpected error occurred while I was trying to understand that. Please try again." };
     }
   }
