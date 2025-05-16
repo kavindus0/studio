@@ -1,3 +1,4 @@
+
 // virtual-assistant.ts
 'use server';
 
@@ -57,8 +58,21 @@ const virtualAssistantFlow = ai.defineFlow(
     inputSchema: VirtualAssistantInputSchema,
     outputSchema: VirtualAssistantOutputSchema,
   },
-  async input => {
-    const {output} = await prompt(input);
-    return output!;
+  async (input: VirtualAssistantInput): Promise<VirtualAssistantOutput> => {
+    console.log('Virtual assistant flow called with input:', input);
+    try {
+      const {output: promptOutput} = await prompt(input);
+
+      console.log('Raw output from prompt:', promptOutput);
+
+      if (!promptOutput || typeof promptOutput.response !== 'string' || promptOutput.response.trim() === '') {
+        console.error('Virtual assistant prompt did not return a valid or non-empty response string. Prompt output was:', promptOutput);
+        return { response: "I'm sorry, I couldn't generate a response for that. Please try a different question." };
+      }
+      return promptOutput;
+    } catch (error) {
+      console.error('Error during virtualAssistantFlow execution:', error);
+      return { response: "An unexpected error occurred while I was trying to understand that. Please try again." };
+    }
   }
 );
