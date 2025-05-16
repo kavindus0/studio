@@ -111,7 +111,7 @@ export default function OpenDayPage() {
                 <p className="text-lg text-foreground mb-6 text-center leading-relaxed animate-child-item opacity-0">
                   Stay updated with the latest news about the ECS Open Day and future events. Please fill out the form below.
                 </p>
-                <div className="responsive-iframe-container bg-muted rounded-lg shadow-inner animate-child-item opacity-0">
+                <div className="responsive-iframe-container bg-muted rounded-lg shadow-inner animate-child-item opacity-0 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
                   <iframe
                     src="https://forms.gle/3XWB4TLjUncWFxRC8"
                     title="ECS Open Day Registration Form"
@@ -170,7 +170,7 @@ export default function OpenDayPage() {
                     Kelaniya, Sri Lanka.
                   </p>
                   <p className="text-foreground mb-2 animate-child-item opacity-0">
-                    Email: <a href="mailto:ecs.uok@gmail.com" className="hover:text-primary">ecs.uok@gmail.com</a>
+                    Email: <a href="mailto:ecs.uok@gmail.com" className="hover:text-primary hover:underline transition-colors duration-200">ecs.uok@gmail.com</a>
                   </p>
                 </div>
               </div>
