@@ -139,7 +139,7 @@ export default function OpenDayPage() {
                       href="https://ecsc-uok.com/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="aurum-button-secondary w-full max-w-xs md:w-auto text-center flex items-center justify-center animate-child-item opacity-0"
+                      className="aurum-button-secondary w-full max-w-xs text-center flex items-center justify-center animate-child-item opacity-0"
                     >
                       <WebsiteIcon className="h-5 w-5 mr-2 inline" /> Website
                     </a>
@@ -147,7 +147,7 @@ export default function OpenDayPage() {
                       href="https://www.linkedin.com/company/electronics-and-computer-science-club/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="aurum-button-secondary w-full max-w-xs md:w-auto text-center flex items-center justify-center animate-child-item opacity-0"
+                      className="aurum-button-secondary w-full max-w-xs text-center flex items-center justify-center animate-child-item opacity-0"
                     >
                       <LinkedInIcon className="h-5 w-5 mr-2 inline" /> LinkedIn
                     </a>
@@ -155,7 +155,7 @@ export default function OpenDayPage() {
                       href="https://www.facebook.com/ecscuok"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="aurum-button-secondary w-full max-w-xs md:w-auto text-center flex items-center justify-center animate-child-item opacity-0"
+                      className="aurum-button-secondary w-full max-w-xs text-center flex items-center justify-center animate-child-item opacity-0"
                     >
                       <FacebookIcon className="h-5 w-5 mr-2 inline" /> Facebook
                     </a>
