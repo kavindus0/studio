@@ -32,12 +32,12 @@ const CircuitBackground = () => {
                 stroke-width: 1.5; /* Slightly thicker lines */
                 fill: none;
                 stroke-linecap: round;
-                animation: draw 20s linear infinite;
+                animation: draw 12s linear infinite; /* Faster: was 20s */
                 opacity: 0; /* Start invisible, fade in with animation */
               }
               .circuit-node {
                 fill: hsl(var(--accent)); /* Uses theme's accent color */
-                animation: pulse 3s ease-in-out infinite alternate;
+                animation: pulse 1.8s ease-in-out infinite alternate; /* Faster: was 3s */
                 opacity: 0.85; /* Slightly more opaque nodes */
               }
               @keyframes draw {
@@ -115,3 +115,5 @@ const CircuitBackground = () => {
 };
 
 export default CircuitBackground;
+
+    
