@@ -96,7 +96,7 @@ export default function OpenDayPage() {
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 animate-child-item opacity-0">
               Let's Embrace the world of Hardware and Software, to create a sustainable future
               </p>
-              <a href="#register" className="aurum-button text-lg animate-child-item opacity-0">
+              <a href="https://opendayuok.tiiny.site" target="_blank" rel="noopener noreferrer" className="aurum-button text-lg animate-child-item opacity-0">
                 More About ECS
               </a>
             </div>
