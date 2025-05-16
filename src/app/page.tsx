@@ -67,14 +67,24 @@ export default function OpenDayPage() {
           {/* Header / Hero Section */}
           <header className="py-12 md:py-20 bg-card shadow-xl section-animate opacity-0">
             <div className="container mx-auto px-6 text-center">
-              <Image 
-                src="https://ecsc-uok.com/assets/ecsc_logo_header-b0c5d86f.png"
-                alt="ECSC UOK Logo" 
-                width={96} 
-                height={96} 
-                className="mx-auto mb-6"
-                data-ai-hint="logo"
-              />
+              <div className="flex justify-center items-center space-x-6 mb-6">
+                <Image 
+                  src="https://ecsc-uok.com/assets/ecsc_logo_header-b0c5d86f.png"
+                  alt="ECSC UOK Logo" 
+                  width={96} 
+                  height={96} 
+                  className="h-24 w-auto" // Adjusted for consistency
+                  data-ai-hint="club logo"
+                />
+                <Image
+                  src="https://administration.kln.ac.lk/images/UOK_LOGO_Color_PNG-01.png"
+                  alt="University of Kelaniya Logo"
+                  width={96}
+                  height={96}
+                  className="h-24 w-auto" // Adjusted for consistency
+                  data-ai-hint="university logo"
+                />
+              </div>
               <h1 className="text-4xl md:text-6xl font-bold text-primary mb-4">
                 Electronics & Computer Science
               </h1>
@@ -177,4 +187,3 @@ export default function OpenDayPage() {
     </>
   );
 }
-

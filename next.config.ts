@@ -21,6 +21,12 @@ const nextConfig: NextConfig = {
         hostname: 'ecsc-uok.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'administration.kln.ac.lk',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
