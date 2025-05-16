@@ -161,10 +161,7 @@ export default function OpenDayPage() {
                     Kelaniya, Sri Lanka.
                   </p>
                   <p className="text-foreground mb-2">
-                    Email: <a href="mailto:ecs_openday@kln.ac.lk" className="hover:text-primary">ecs_openday@kln.ac.lk</a>
-                  </p>
-                  <p className="text-foreground">
-                    Phone: <a href="tel:+94112903364" className="hover:text-primary">+94 (0)11 2903364</a> (Actual Dept. No.)
+                    Email: <a href="mailto:ecs.uok@gmail.com" className="hover:text-primary">ecs.uok@gmail.com</a>
                   </p>
                 </div>
               </div>
