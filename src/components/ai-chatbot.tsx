@@ -22,7 +22,7 @@ export function AiChatbot() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
-  const [buttonClasses, setButtonClasses] = useState("opacity-0");
+  const [buttonClasses, setButtonClasses] = useState("opacity-0"); // Initialize as opacity-0
 
   useEffect(() => {
     if (scrollAreaRef.current) {
