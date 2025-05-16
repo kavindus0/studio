@@ -8,6 +8,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogClose } from "@/components/ui/dialog";
 import { MessageSquare, Send, User, Bot, X } from "lucide-react";
 import { virtualAssistant, type VirtualAssistantInput, type VirtualAssistantOutput } from "@/ai/flows/virtual-assistant";
+import { cn } from "@/lib/utils";
 
 interface Message {
   id: string;
@@ -21,12 +22,24 @@ export function AiChatbot() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const [buttonClasses, setButtonClasses] = useState("opacity-0");
 
   useEffect(() => {
     if (scrollAreaRef.current) {
       scrollAreaRef.current.scrollTo({ top: scrollAreaRef.current.scrollHeight, behavior: 'smooth' });
     }
   }, [messages]);
+
+  useEffect(() => {
+    // Delay the appearance of the chatbot button slightly
+    // This timer starts when the AiChatbot component is mounted.
+    // Mounting happens when showContent becomes true in page.tsx (after preloader).
+    const timer = setTimeout(() => {
+      setButtonClasses("animate-fadeIn"); // This class handles opacity from 0 to 1.
+    }, 750); // Adjust delay as needed, e.g., 0.75s after main content starts appearing.
+    return () => clearTimeout(timer);
+  }, []);
+
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -54,7 +67,10 @@ export function AiChatbot() {
   return (
     <>
       <Button
-        className="fixed bottom-6 right-6 rounded-full w-16 h-16 shadow-xl z-50 bg-primary hover:bg-primary/90 text-primary-foreground"
+        className={cn(
+          "fixed bottom-6 right-6 rounded-full w-16 h-16 shadow-xl z-50 bg-primary hover:bg-primary/90 text-primary-foreground",
+          buttonClasses
+        )}
         onClick={() => setIsOpen(true)}
         aria-label="Open Chatbot"
       >
