@@ -1,6 +1,7 @@
 
 "use client";
 import React, { useEffect } from 'react';
+import Image from 'next/image';
 
 interface PreloaderProps {
   onLoaded: () => void;
@@ -22,16 +23,15 @@ const Preloader: React.FC<PreloaderProps> = ({ onLoaded }) => {
       aria-busy="true"
     >
       <div className="animate-pulseOnce">
-        <svg 
-          className="w-20 h-20 text-primary" 
-          xmlns="http://www.w3.org/2000/svg" 
-          fill="none" 
-          viewBox="0 0 24 24" 
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3m0-12a9 9 0 11-18 0 9 9 0 0118 0zM12 15a3 3 0 110-6 3 3 0 010 6z" />
-        </svg>
+        <Image
+          src="https://ecsc-uok.com/assets/ecsc_logo_header-b0c5d86f.png"
+          alt="ECSC UOK Logo"
+          width={80} 
+          height={80}
+          className="h-20 w-20 object-contain" // Adjusted for size similar to old SVG
+          priority // Preload this image as it's critical for LCP
+          data-ai-hint="club logo"
+        />
       </div>
       <p className="mt-4 text-xl text-foreground tracking-wider">Loading ECS Experience...</p>
       <p className="mt-2 text-sm text-muted-foreground">University of Kelaniya</p>
