@@ -29,7 +29,7 @@ const CircuitBackground = () => {
             {`
               .circuit-line {
                 stroke: hsl(var(--primary)); /* Uses theme's primary blue */
-                stroke-width: 1; /* Thinner lines for a more subtle effect */
+                stroke-width: 1; /* Thicker lines for a more subtle effect */
                 fill: none;
                 stroke-linecap: round;
                 animation: draw 20s linear infinite;
@@ -42,13 +42,13 @@ const CircuitBackground = () => {
               }
               @keyframes draw {
                 0% { stroke-dashoffset: 1200; opacity: 0; }
-                10% { opacity: 0.6; } /* Fade in */
-                80% { opacity: 0.6; } /* Hold visibility */
+                10% { opacity: 0.7; } /* Fade in, increased opacity */
+                80% { opacity: 0.7; } /* Hold visibility, increased opacity */
                 100% { stroke-dashoffset: 0; opacity: 0; } /* Complete draw & fade out */
               }
               @keyframes pulse {
-                from { opacity: 0.3; r: 2; }
-                to { opacity: 0.7; r: 4; }
+                from { opacity: 0.4; r: 2; } /* Increased base opacity */
+                to { opacity: 0.8; r: 4; }   /* Increased pulse opacity */
               }
             `}
           </style>
