@@ -55,8 +55,8 @@ export default function OpenDayPage() {
     <>
       {/* Metadata is in layout.tsx, but can add page-specific overrides here if needed */}
       <Head>
-        <title>ECS Open Day 2024 | University of Kelaniya</title>
-        <meta name="description" content="Discover the world of Electronics and Computer Science at the University of Kelaniya's Open Day 2024." />
+        <title>ECS Open Day 2025 | University of Kelaniya</title>
+        <meta name="description" content="Discover the world of Electronics and Computer Science at the University of Kelaniya's Open Day 2025." />
       </Head>
 
       {/* Preloader is always rendered initially and handles its own fade-out and disappearance via CSS animation */}
@@ -89,7 +89,7 @@ export default function OpenDayPage() {
                 Electronics & Computer Science
               </h1>
               <h2 className="text-2xl md:text-3xl text-foreground mb-8">
-                Open Day 2024 - University of Kelaniya
+                Open Day 2025 - University of Kelaniya
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10">
               Let's Embrace the world of Hardware and Software, to create a sustainable future
@@ -187,3 +187,4 @@ export default function OpenDayPage() {
     </>
   );
 }
+
