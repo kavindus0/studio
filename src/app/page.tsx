@@ -167,7 +167,7 @@ export default function OpenDayPage() {
               </div>
               <div className="mt-10 border-t border-border pt-8 text-center text-muted-foreground text-sm">
                 <p>© {new Date().getFullYear()} Department of Electronics and Computer Science, University of Kelaniya. All rights reserved.</p>
-                <p>Inspired by Aurum Concepts and university department websites.</p>
+                <p>ECSC Web Team</p>
               </div>
             </div>
           </footer>
@@ -177,3 +177,4 @@ export default function OpenDayPage() {
     </>
   );
 }
+
