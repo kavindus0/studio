@@ -4,6 +4,7 @@ import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"; // For potential toast notifications
+import CircuitBackground from '@/components/circuit-background'; // Import the new background
 
 export const metadata: Metadata = {
   title: 'ECS Open Day - University of Kelaniya',
@@ -22,7 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased`}>
-        {children}
+        <CircuitBackground />
+        {/* Wrap children in a div that establishes a stacking context above the background */}
+        <div className="relative z-0">
+          {children}
+        </div>
         <Toaster />
       </body>
     </html>

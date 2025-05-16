@@ -10,7 +10,6 @@ import { AiChatbot } from '@/components/ai-chatbot';
 
 export default function OpenDayPage() {
   const [showContent, setShowContent] = useState(false);
-  // This state indicates preloader has finished its internal 2.5s timeout
   const [isPreloaderInternalLoadDone, setIsPreloaderInternalLoadDone] = useState(false);
 
   const handlePreloaderLoaded = () => {
@@ -19,7 +18,7 @@ export default function OpenDayPage() {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      document.body.style.overflow = 'hidden'; // Disable scrolling initially
+      document.body.style.overflow = 'hidden'; 
     }
   }, []);
   
@@ -28,7 +27,7 @@ export default function OpenDayPage() {
       const contentTimer = setTimeout(() => {
         setShowContent(true);
         if (typeof window !== 'undefined') {
-          document.body.style.overflow = 'auto'; // Re-enable scrolling
+          document.body.style.overflow = 'auto'; 
         }
       }, 500); 
       return () => clearTimeout(contentTimer);
@@ -39,20 +38,18 @@ export default function OpenDayPage() {
     if (showContent) {
       const sections = document.querySelectorAll('.section-animate');
       sections.forEach((section, sectionIndex) => {
-        // Animate the main section itself
         setTimeout(() => {
           section.classList.remove('opacity-0');
-          section.classList.add('animate-fadeIn'); // Main section animation
+          section.classList.add('animate-fadeIn'); 
 
-          // Animate children of this section
           const childrenToAnimate = section.querySelectorAll('.animate-child-item');
           childrenToAnimate.forEach((child, childIndex) => {
             setTimeout(() => {
               child.classList.remove('opacity-0');
-              child.classList.add('animate-slideInFromBottomSlight'); // Child animation
-            }, childIndex * 100); // Stagger children within the section
+              child.classList.add('animate-slideInFromBottomSlight'); 
+            }, childIndex * 100); 
           });
-        }, sectionIndex * 250); // Stagger main sections
+        }, sectionIndex * 250); 
       });
     }
   }, [showContent]);
@@ -67,8 +64,10 @@ export default function OpenDayPage() {
       <Preloader onLoaded={handlePreloaderLoaded} />
 
       {showContent && (
-        <div className="min-h-screen bg-background text-foreground flex flex-col">
-          <header className="py-12 md:py-20 bg-card shadow-xl section-animate opacity-0">
+        // Removed bg-background from this div, making it transparent so the CircuitBackground (and body background) shows through.
+        // Added relative and z-0 to ensure content sits above the fixed background in layout.tsx
+        <div className="min-h-screen text-foreground flex flex-col">
+          <header className="py-12 md:py-20 bg-card/80 backdrop-blur-sm shadow-xl section-animate opacity-0"> {/* Added transparency to card */}
             <div className="container mx-auto px-6 text-center">
               <div className="flex justify-center items-center space-x-6 mb-6 animate-child-item opacity-0">
                 <Image
@@ -106,12 +105,13 @@ export default function OpenDayPage() {
           <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-16 md:space-y-24">
             
             <section id="register" className="section-animate opacity-0">
-              <div className="section-card">
+              {/* Added transparency to section-card as well */}
+              <div className="section-card bg-card/80 backdrop-blur-sm">
                 <h2 className="section-title animate-child-item opacity-0">More About ECS</h2>
                 <p className="text-lg text-foreground mb-6 text-center leading-relaxed animate-child-item opacity-0">
                   Stay updated with the latest news about the ECS Open Day and future events. Please fill out the form below.
                 </p>
-                <div className="responsive-iframe-container bg-muted rounded-lg shadow-inner animate-child-item opacity-0 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+                <div className="responsive-iframe-container bg-muted/50 rounded-lg shadow-inner animate-child-item opacity-0 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]"> {/* Adjusted iframe background */}
                   <iframe
                     src="https://forms.gle/3XWB4TLjUncWFxRC8"
                     title="ECS Open Day Registration Form"
@@ -129,7 +129,8 @@ export default function OpenDayPage() {
 
           </main>
 
-          <footer className="bg-card py-12 section-animate opacity-0">
+          {/* Added transparency to footer card */}
+          <footer className="bg-card/80 backdrop-blur-sm py-12 section-animate opacity-0">
             <div className="container mx-auto px-6">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="text-center md:text-left">
